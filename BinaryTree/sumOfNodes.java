@@ -27,13 +27,13 @@ public class sumOfNodes {
             return newNode;
         }
 
-        public static int countOfNodes(Node root) {
+        public static int sumOfNodes(Node root) {
             if (root == null) {
                 return 0;
             }
 
-            int leftNodes = countOfNodes(root.left);
-            int rightNodes=countOfNodes(root.right);
+            int leftNodes = sumOfNodes(root.left);
+            int rightNodes=sumOfNodes(root.right);
             return leftNodes+rightNodes+root.data;
 
         }
@@ -44,6 +44,6 @@ public class sumOfNodes {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1,-1};
         BT tree = new BT();
         Node root = BT.build(nodes);
-        System.out.println("The number of nodes in the given tree is " + BT.countOfNodes(root));
+        System.out.println("The number of nodes in the given tree is " + BT.sumOfNodes(root));
     }
 }
